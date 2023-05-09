@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 
 const workoutA = [
     {
@@ -314,6 +313,7 @@ const workouts = [
     },
 ];
 
+// @ts-ignore
 export default function WorkoutTable({ workout }) {
     return (
         // <table>
@@ -335,7 +335,9 @@ export default function WorkoutTable({ workout }) {
         //     </tbody>
         // </table>
         <div>
-            <h3>{workouts[workout].name}</h3>
+            <h3>{
+                // @ts-ignore
+                workouts[workout].name}</h3>
             <div className="mb-5">
                 <div className="overflow-x-auto">
                     <table className="min-w-360 table-auto">
@@ -348,18 +350,20 @@ export default function WorkoutTable({ workout }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {workouts[workout].exercises.map((exercise) => (
-                                <tr key={exercise.name}>
-                                    {/* <td className="border px-4 py-2 w-1/12">
+                            {
+                                // @ts-ignore
+                                workouts[workout].exercises.map((exercise) => (
+                                    <tr key={exercise.name}>
+                                        {/* <td className="border px-4 py-2 w-1/12">
 
                                     </td> */}
-                                    <td className="border px-4 py-2">
-                                        {exercise.name}
-                                    </td>
-                                    <td className="border px-4 py-2">{exercise.sets}</td>
-                                    <td className="border px-4 py-2">{exercise.reps}</td>
-                                </tr>
-                            ))}
+                                        <td className="border px-4 py-2">
+                                            {exercise.name}
+                                        </td>
+                                        <td className="border px-4 py-2">{exercise.sets}</td>
+                                        <td className="border px-4 py-2">{exercise.reps}</td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>

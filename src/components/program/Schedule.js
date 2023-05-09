@@ -1,5 +1,4 @@
 import WeeklySchedule from './WeeklySchedule';
-import WeeklyCalendar from './WeeklyCalendar';
 
 export default function Schedule() {
 
